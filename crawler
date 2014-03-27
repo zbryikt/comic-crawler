@@ -1,0 +1,7 @@
+#config.book-url!/usr/bin/env bash
+if [ -z "$1" ]; then
+echo "usage: crawler [url-to-comic-index-page]"
+else
+livescript -cb index.ls | ./node_modules/.bin/phantomjs index.js $1
+lsc download.ls $1
+fi
